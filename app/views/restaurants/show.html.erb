@@ -2,5 +2,15 @@
 <h4><%= @restaurant.phone_number %></h4>
 <h5><%= @restaurant.address %></h5>
 <h5><%= @restaurant.category %></h5>
+<br>
 
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item"><%= review.content %></li>
+  <% end %>
+</ul>
+<br>
+
+<%= link_to "Add a review", new_restaurant_review_path(@restaurant) %>
+<br>
 <%= link_to "Back to homepage", restaurants_path %>
