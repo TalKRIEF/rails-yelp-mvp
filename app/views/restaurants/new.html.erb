@@ -1,0 +1,8 @@
+<h1>New Restaurant</h1>
+<%= simple_form_for @restaurant do |f| %>
+    <%= f.input :name %>
+    <%= f.input :phone_number %>
+    <%= f.input :address %>
+    <%= f.input :category, collection: Restaurant::CATEGORY, selected: Restaurant::CATEGORY.first %>
+    <%= f.button :submit, class: "btn-primary" %>
+  <% end %>
